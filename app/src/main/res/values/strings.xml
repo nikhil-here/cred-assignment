@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">cred</string>
+    <string name="heading_container_credit" >nikhil, how much do you need?</string>
+    <string name="heading_container_emi" >how do you wish to repay?</string>
+    <string name="heading_container_bank" >where should we send the money?</string>
+    <string name="helper_container_credit" >move the dial and set any amount you need upto ₹4,87,891</string>
+    <string name="helper_container_emi" >choose one of our recommended plans or make your own</string>
+    <string name="helper_container_bank" >amount will be credited to this bank account, EMI will also be debited from this bank account</string>
+    <string name="credit_percent" >@1.04% monthly</string>
+</resources>

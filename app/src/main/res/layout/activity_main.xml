@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_main_xml_scene"
+    tools:context=".MainActivity">
+
+    <!-- Upper Floating Action Button Starts -->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_close"
+        app:fabCustomSize="34dp"
+        app:fabSize="mini"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_close"
+        app:fabCustomSize="34dp"
+        app:fabSize="mini"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Upper Floating Action Button Ends -->
+
+    <!--  First View Starts  -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_container_credit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:alpha="0.6"
+        android:background="@drawable/bg_container"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fab_close" />
+
+    <TextView
+        android:id="@+id/tv_heading_credit"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:autoSizeTextType="uniform"
+        android:letterSpacing="0.08"
+        android:text="@string/heading_container_credit"
+        android:textColor="@color/grey"
+        app:layout_constraintLeft_toLeftOf="@id/cl_container_credit"
+        app:layout_constraintRight_toRightOf="@id/cl_container_credit"
+        app:layout_constraintTop_toTopOf="@id/cl_container_credit" />
+
+    <TextView
+        android:id="@+id/tv_helper_credit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="32dp"
+        android:autoSizeTextType="uniform"
+        android:lineSpacingExtra="1dp"
+        android:text="@string/helper_container_credit"
+        android:textColor="@color/darkGrey"
+        app:layout_constraintLeft_toLeftOf="@id/cl_container_credit"
+        app:layout_constraintRight_toRightOf="@id/cl_container_credit"
+        app:layout_constraintTop_toBottomOf="@id/tv_heading_credit" />
+
+    <ImageView
+        android:id="@+id/iv_arrow_down_credit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_down"
+        android:layout_margin="24dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/cl_container_credit"
+        app:layout_constraintRight_toRightOf="@id/cl_container_credit"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_credit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="56dp"
+        android:translationZ="-1dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="24dp"
+        app:layout_constraintBottom_toTopOf="@id/cl_container_emi"
+        app:layout_constraintTop_toBottomOf="@id/tv_helper_credit" />
+
+    <me.tankery.lib.circularseekbar.CircularSeekBar
+        android:id="@+id/cs_credit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:translationZ="1dp"
+        app:cs_circle_color="@color/orange"
+        app:cs_circle_progress_color="@color/brown"
+        app:cs_circle_stroke_width="16dp"
+        app:cs_circle_style="round"
+        app:cs_disable_progress_glow="true"
+        app:cs_max="487891"
+        app:cs_move_outside_circle="false"
+        app:cs_negative_enabled="false"
+        app:cs_pointer_color="@color/lightPink"
+        app:cs_pointer_halo_color="@color/lightPink"
+        app:cs_pointer_halo_color_ontouch="@color/lightPink"
+        app:cs_pointer_stroke_width="34dp"
+        app:cs_progress="150000"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_credit"
+        app:layout_constraintLeft_toLeftOf="@id/cardview_credit"
+        app:layout_constraintRight_toRightOf="@id/cardview_credit"
+        app:layout_constraintTop_toTopOf="@id/cardview_credit" />
+
+    <TextView
+        android:id="@+id/tv_credit_amount_headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="credit amount"
+        android:textColor="@color/darkGrey"
+        android:textStyle="bold"
+        android:translationZ="1dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_credit_amount"
+        app:layout_constraintLeft_toLeftOf="@id/cs_credit"
+        app:layout_constraintRight_toRightOf="@id/cs_credit" />
+
+    <TextView
+        android:id="@+id/tv_credit_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.06"
+        android:text="₹1,50,000"
+        android:textColor="@color/darkGrey"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:translationZ="1dp"
+        app:layout_constraintBottom_toBottomOf="@id/cs_credit"
+        app:layout_constraintLeft_toLeftOf="@id/cs_credit"
+        app:layout_constraintRight_toRightOf="@id/cs_credit"
+        app:layout_constraintTop_toTopOf="@id/cs_credit" />
+
+    <TextView
+        android:id="@+id/tv_credit_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/credit_percent"
+        android:textColor="@color/green"
+        android:textStyle="bold"
+        android:translationZ="1dp"
+        app:layout_constraintLeft_toLeftOf="@id/cs_credit"
+        app:layout_constraintRight_toRightOf="@id/cs_credit"
+        app:layout_constraintTop_toBottomOf="@id/tv_credit_amount" />
+
+    <!--  First View Ends  -->
+
+    <!--  Second View Starts  -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_container_emi"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/bg_container"
+        android:translationZ="2dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- hidden views of Second View Starts  -->
+    <TextView
+        android:id="@+id/tv_heading_selected_emi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.6"
+        android:text="EMI"
+        android:textColor="@color/darkGrey"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@id/cl_container_emi"
+        app:layout_constraintTop_toTopOf="@id/cl_container_emi" />
+
+    <TextView
+        android:id="@+id/tv_selected_emi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:alpha="0.6"
+        android:text="₹4,247 / mo"
+        android:textColor="@color/darkGrey"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@id/tv_heading_selected_emi"
+        app:layout_constraintTop_toBottomOf="@id/tv_heading_selected_emi" />
+
+    <TextView
+        android:id="@+id/tv_heading_selected_emi_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:alpha="0.6"
+        android:text="duration"
+        android:textColor="@color/darkGrey"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@id/tv_heading_selected_emi"
+        app:layout_constraintRight_toRightOf="@id/cl_container_emi"
+        app:layout_constraintTop_toTopOf="@id/cl_container_emi" />
+
+    <TextView
+        android:id="@+id/tv_selected_emi_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:alpha="0.6"
+        android:text="12 months"
+        android:textColor="@color/darkGrey"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@id/tv_heading_selected_emi_duration"
+        app:layout_constraintTop_toBottomOf="@id/tv_heading_selected_emi_duration" />
+
+    <!-- hidden views of Second View Ends  -->
+
+    <TextView
+        android:id="@+id/tv_cta_first_proceed"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:letterSpacing="0.08"
+        android:text="Proceed to EMI selection"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:translationZ="2dp"
+        android:background="@drawable/bg_cta"
+        app:layout_constraintBottom_toBottomOf="@id/cl_container_emi"
+        app:layout_constraintLeft_toLeftOf="@id/cl_container_emi"
+        app:layout_constraintRight_toRightOf="@id/cl_container_emi"
+        app:layout_constraintTop_toTopOf="@id/cl_container_emi" />
+
+    <TextView
+        android:id="@+id/tv_heading_emi"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:autoSizeTextType="uniform"
+        android:letterSpacing="0.08"
+        android:text="@string/heading_container_emi"
+        android:textColor="@color/grey"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@id/cl_container_emi"
+        app:layout_constraintRight_toRightOf="@id/cl_container_emi"
+        app:layout_constraintTop_toTopOf="@id/cl_container_emi" />
+
+    <TextView
+        android:id="@+id/tv_helper_emi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="32dp"
+        android:autoSizeTextType="uniform"
+        android:lineSpacingExtra="1dp"
+        android:text="@string/helper_container_emi"
+        android:textColor="@color/grey"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@id/cl_container_emi"
+        app:layout_constraintRight_toRightOf="@id/cl_container_emi"
+        app:layout_constraintTop_toBottomOf="@id/tv_heading_emi" />
+
+    <ImageView
+        android:id="@+id/iv_arrow_down_emi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_down"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="24dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/cl_container_emi"
+        app:layout_constraintRight_toRightOf="@id/cl_container_emi"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_emi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/tv_helper_emi"
+        tools:listitem="@layout/component_emi" />
+
+    <!--  Second View Ends  -->
+
+    <!--  Third View Start  -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_container_bank"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_container"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_cta_second_select_bank"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:letterSpacing="0.08"
+        android:text="Select your bank account"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:background="@drawable/bg_cta"
+        app:layout_constraintBottom_toBottomOf="@id/cl_container_bank"
+        app:layout_constraintLeft_toLeftOf="@id/cl_container_bank"
+        app:layout_constraintRight_toRightOf="@id/cl_container_bank"
+        app:layout_constraintTop_toTopOf="@id/cl_container_bank" />
+
+    <TextView
+        android:id="@+id/tv_heading_bank"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:autoSizeTextType="uniform"
+        android:letterSpacing="0.08"
+        android:text="@string/heading_container_bank"
+        android:textColor="@color/grey"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@id/cl_container_bank"
+        app:layout_constraintRight_toRightOf="@id/cl_container_bank"
+        app:layout_constraintTop_toTopOf="@id/cl_container_bank" />
+
+    <TextView
+        android:id="@+id/tv_helper_bank"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="24dp"
+        android:autoSizeTextType="uniform"
+        android:lineSpacingExtra="1dp"
+        android:text="@string/helper_container_bank"
+        android:textColor="@color/darkGrey"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@id/cl_container_bank"
+        app:layout_constraintRight_toRightOf="@id/cl_container_bank"
+        app:layout_constraintTop_toBottomOf="@id/tv_heading_bank" />
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/logo"
+        android:scaleType="fitCenter"
+        android:background="@drawable/bg_logo"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/tv_helper_bank"
+        app:layout_constraintLeft_toLeftOf="@id/tv_helper_bank" />
+
+    <TextView
+        android:id="@+id/tv_bank_name"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="16dp"
+        android:letterSpacing="0.08"
+        android:text="Paytm Payments Bank"
+        android:textColor="@color/grey"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@id/iv_logo"
+        app:layout_constraintTop_toTopOf="@id/iv_logo" />
+
+    <TextView
+        android:id="@+id/tv_bank_no"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:letterSpacing="0.08"
+        android:text="50100117009192"
+        android:textColor="@color/darkGrey"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@id/tv_bank_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_bank_name" />
+
+    <CheckBox
+        android:id="@+id/cb_bank"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="24dp"
+        android:button="@drawable/selector_radio"
+        android:buttonTint="@color/white"
+        android:checked="true"
+        android:elevation="16dp"
+        android:gravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/iv_logo"
+        app:layout_constraintTop_toTopOf="@id/iv_logo"
+        app:layout_constraintRight_toRightOf="@id/cl_container_bank"/>
+
+    <TextView
+        android:id="@+id/tv_cta_third_kyc"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:letterSpacing="0.08"
+        android:text="Tap for 1-click KYC"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:background="@drawable/bg_cta"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/cl_container_bank"
+        app:layout_constraintLeft_toLeftOf="@id/cl_container_bank"
+        app:layout_constraintRight_toRightOf="@id/cl_container_bank" />
+
+    <!--  Third View Ends  -->
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

@@ -1,0 +1,25 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:gravity="center" android:width="40dp" android:height="40dp">
+        <shape android:shape="rectangle" >
+            <corners android:radius="40dp"/>
+            <solid android:color="@android:color/transparent" />
+            <stroke android:width="0.1dp"/>
+        </shape>
+    </item>
+    <item android:gravity="center">
+        <vector xmlns:android="http://schemas.android.com/apk/res/android"
+            android:width="30dp"
+            android:height="30dp"
+            android:tint="@color/white"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:fillColor="@color/white"
+                android:pathData="M9,16.17L4.83,12l-1.42,1.41L9,19 21,7l-1.41,-1.41z" />
+        </vector>
+    </item>
+
+</layer-list>
+
+

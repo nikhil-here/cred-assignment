@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/component_emi_cl_main"
+    android:layout_width="wrap_content"
+    android:layout_height="220dp"
+    android:layout_marginRight="20dp"
+    android:minWidth="200dp"
+    app:cardCornerRadius="24dp"
+    app:cardBackgroundColor="@color/vintageBlue"
+   >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:padding="24dp">
+
+        <CheckBox
+            android:id="@+id/cb_emi"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:button="@drawable/selector_radio"
+            android:buttonTint="@color/white"
+            android:checked="true"
+            android:elevation="16dp"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_emi_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:letterSpacing="0.08"
+            android:text="₹4,247"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cb_emi" />
+
+        <TextView
+            android:id="@+id/tv_monthduration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:alpha="0.6"
+            android:letterSpacing="0.08"
+            android:text="/mo"
+            android:textColor="@color/grey"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_emi_amount"
+            app:layout_constraintLeft_toRightOf="@id/tv_emi_amount"
+            app:layout_constraintTop_toTopOf="@id/tv_emi_amount" />
+
+        <TextView
+            android:id="@+id/tv_emi_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:letterSpacing="0.08"
+            android:text="for 12 months"
+            android:textColor="@color/grey"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_emi_amount" />
+
+        <TextView
+            android:id="@+id/tv_see_calculation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:alpha="0.6"
+            android:letterSpacing="0.08"
+            android:text="see calculations"
+            android:textColor="@color/grey"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_emi_duration" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

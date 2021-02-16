@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <!--  First to Second toggle Transition -->
+    <Transition
+        motion:constraintSetEnd="@+id/secondView"
+        motion:constraintSetStart="@id/firstView"
+        motion:duration="800">
+        <OnClick motion:targetId="@+id/tv_cta_first_proceed" />
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="10"
+                motion:motionTarget="@+id/cardview_credit" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="10"
+                motion:motionTarget="@+id/cs_credit" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="10"
+                motion:motionTarget="@+id/tv_credit_percentage" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="10"
+                motion:motionTarget="@+id/tv_cta_first_proceed" />
+        </KeyFrameSet>
+    </Transition>
+
+    <Transition
+        motion:constraintSetEnd="@+id/firstView"
+        motion:constraintSetStart="@id/secondView"
+        motion:duration="800">
+        <OnClick motion:targetId="@+id/iv_arrow_down_credit" />
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="90"
+                motion:motionTarget="@+id/cardview_credit" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="90"
+                motion:motionTarget="@+id/cs_credit" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="90"
+                motion:motionTarget="@+id/tv_credit_percentage" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="90"
+                motion:motionTarget="@+id/tv_cta_first_proceed" />
+        </KeyFrameSet>
+    </Transition>
+
+    <!--  Second to third toggle transition  -->
+    <Transition
+        motion:constraintSetEnd="@+id/thirdView"
+        motion:constraintSetStart="@+id/secondView"
+        motion:duration="800">
+        <OnClick motion:targetId="@+id/tv_cta_second_select_bank" />
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="10"
+                motion:motionTarget="@+id/tv_cta_second_select_bank" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="10"
+                motion:motionTarget="@+id/tv_cta_third_kyc" />
+        </KeyFrameSet>
+    </Transition>
+
+    <Transition
+        motion:constraintSetEnd="@+id/secondView"
+        motion:constraintSetStart="@id/thirdView"
+        motion:duration="800">
+        <OnClick motion:targetId="@+id/iv_arrow_down_emi" />
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="90"
+                motion:motionTarget="@+id/tv_cta_second_select_bank" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="90"
+                motion:motionTarget="@+id/tv_cta_third_kyc" />
+        </KeyFrameSet>
+    </Transition>
+
+    <!--  third to first transition  -->
+    <Transition
+        motion:constraintSetEnd="@+id/firstView"
+        motion:constraintSetStart="@id/thirdView"
+        motion:duration="800">
+        <OnClick motion:targetId="@+id/iv_arrow_down_credit" />
+    </Transition>
+
+
+    <!--  First View Constraints  -->
+    <ConstraintSet android:id="@+id/firstView" />
+
+
+    <!--  Second View Constraints  -->
+    <ConstraintSet android:id="@+id/secondView">
+        <Constraint
+            android:id="@+id/tv_heading_credit"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:visibility="invisible"
+            motion:layout_constraintLeft_toLeftOf="@id/cl_container_credit"
+            motion:layout_constraintRight_toRightOf="@id/cl_container_credit"
+            motion:layout_constraintTop_toTopOf="@id/cl_container_credit" />
+        <Constraint
+            android:id="@+id/tv_helper_credit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="32dp"
+            android:visibility="invisible"
+            motion:layout_constraintLeft_toLeftOf="@id/cl_container_credit"
+            motion:layout_constraintRight_toRightOf="@id/cl_container_credit"
+            motion:layout_constraintTop_toBottomOf="@id/tv_heading_credit" />
+        <Constraint
+            android:id="@+id/tv_credit_amount_headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintLeft_toLeftOf="@id/cl_container_credit"
+            motion:layout_constraintTop_toTopOf="@id/cl_container_credit"
+            motion:layout_editor_absoluteX="283dp"
+            motion:layout_editor_absoluteY="355dp" />
+        <Constraint
+            android:id="@+id/tv_credit_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintLeft_toLeftOf="@id/tv_credit_amount_headline"
+            motion:layout_constraintTop_toBottomOf="@id/tv_credit_amount_headline" />
+        <Constraint
+            android:id="@+id/tv_credit_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            motion:layout_editor_absoluteX="265dp"
+            motion:layout_editor_absoluteY="159dp" />
+        <Constraint
+            android:id="@+id/cs_credit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:translationZ="1dp"
+            android:visibility="gone"
+            motion:layout_constraintBottom_toBottomOf="@id/cardview_credit"
+            motion:layout_constraintLeft_toLeftOf="@id/cardview_credit"
+            motion:layout_constraintRight_toRightOf="@id/cardview_credit"
+            motion:layout_constraintTop_toTopOf="@id/cardview_credit" />
+        <Constraint
+            android:id="@+id/cardview_credit"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="56dp"
+            android:translationZ="-1dp"
+            android:visibility="gone"
+            motion:layout_constraintBottom_toTopOf="@id/cl_container_emi"
+            motion:layout_constraintTop_toBottomOf="@id/tv_helper_credit" />
+        <Constraint
+            android:id="@+id/cl_container_emi"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="84dp"
+            android:translationZ="-1dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="@id/cl_container_credit" />
+        <Constraint
+            android:id="@+id/tv_cta_first_proceed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            motion:layout_editor_absoluteX="232dp"
+            motion:layout_editor_absoluteY="693dp" />
+        <Constraint
+            android:id="@+id/tv_heading_emi"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:visibility="visible"
+            motion:layout_constraintTop_toTopOf="@id/cl_container_emi"
+            motion:layout_editor_absoluteX="204dp" />
+        <Constraint
+            android:id="@+id/tv_helper_emi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="32dp"
+            android:visibility="visible"
+            motion:layout_constraintLeft_toLeftOf="@id/cl_container_emi"
+            motion:layout_constraintRight_toRightOf="@id/cl_container_emi"
+            motion:layout_constraintTop_toBottomOf="@id/tv_heading_emi" />
+        <Constraint
+            android:id="@+id/rv_emi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            android:visibility="visible"
+            motion:layout_constraintLeft_toLeftOf="@id/cl_container_emi"
+            motion:layout_constraintTop_toBottomOf="@id/tv_helper_emi" />
+        <Constraint
+            android:id="@+id/cl_container_bank"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+        <Constraint
+            android:id="@+id/tv_cta_second_select_bank"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="@id/cl_container_bank"
+            motion:layout_constraintLeft_toLeftOf="@id/cl_container_bank"
+            motion:layout_constraintRight_toRightOf="@id/cl_container_bank"
+            motion:layout_constraintTop_toTopOf="@id/cl_container_bank" />
+        <Constraint
+            android:id="@+id/cl_container_credit"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:alpha="0.6"
+            android:translationZ="-1dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/fab_close" />
+        <Constraint
+            android:id="@+id/iv_arrow_down_credit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
+            android:alpha="0.6"
+            android:visibility="visible"
+            motion:layout_constraintRight_toRightOf="@id/cl_container_credit"
+            motion:layout_constraintTop_toTopOf="@id/cl_container_credit" />
+    </ConstraintSet>
+    <!--  Second View Constraints Ends  -->
+
+
+    <!--  Third View Constraints Start  -->
+    <ConstraintSet
+        android:id="@+id/thirdView"
+        motion:deriveConstraintsFrom="@+id/secondView">
+        <Constraint
+            android:id="@+id/cb_bank"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="24dp"
+            android:elevation="16dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="@id/iv_logo"
+            motion:layout_constraintRight_toRightOf="@id/cl_container_bank"
+            motion:layout_constraintTop_toTopOf="@id/iv_logo" />
+        <Constraint
+            android:id="@+id/tv_bank_no"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:visibility="visible"
+            motion:layout_constraintLeft_toLeftOf="@id/tv_bank_name"
+            motion:layout_constraintTop_toBottomOf="@id/tv_bank_name" />
+        <Constraint
+            android:id="@+id/tv_bank_name"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="6dp"
+            android:visibility="visible"
+            motion:layout_constraintLeft_toRightOf="@id/iv_logo"
+            motion:layout_constraintTop_toTopOf="@id/iv_logo" />
+        <Constraint
+            android:id="@+id/iv_logo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            android:visibility="visible"
+            motion:layout_constraintLeft_toLeftOf="@id/tv_helper_bank"
+            motion:layout_constraintTop_toBottomOf="@id/tv_helper_bank" />
+        <Constraint
+            android:id="@+id/tv_helper_bank"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="24dp"
+            android:visibility="visible"
+            motion:layout_constraintLeft_toLeftOf="@id/cl_container_bank"
+            motion:layout_constraintRight_toRightOf="@id/cl_container_bank"
+            motion:layout_constraintTop_toBottomOf="@id/tv_heading_bank" />
+        <Constraint
+            android:id="@+id/tv_heading_bank"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            android:visibility="visible"
+            motion:layout_constraintLeft_toLeftOf="@id/cl_container_bank"
+            motion:layout_constraintRight_toRightOf="@id/cl_container_bank"
+            motion:layout_constraintTop_toTopOf="@id/cl_container_bank" />
+        <Constraint
+            android:id="@+id/tv_cta_second_select_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            motion:layout_editor_absoluteX="116dp"
+            motion:layout_editor_absoluteY="693dp" />
+        <Constraint
+            android:id="@+id/tv_selected_emi_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:alpha="0.6"
+            android:visibility="visible"
+            motion:layout_constraintLeft_toLeftOf="@id/tv_heading_selected_emi_duration"
+            motion:layout_constraintTop_toBottomOf="@id/tv_heading_selected_emi_duration" />
+        <Constraint
+            android:id="@+id/tv_heading_selected_emi_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:alpha="0.6"
+            android:visibility="visible"
+            motion:layout_constraintLeft_toRightOf="@id/tv_heading_selected_emi"
+            motion:layout_constraintRight_toRightOf="@id/cl_container_emi"
+            motion:layout_constraintTop_toTopOf="@id/cl_container_emi" />
+        <Constraint
+            android:id="@+id/tv_selected_emi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:alpha="0.6"
+            android:visibility="visible"
+            motion:layout_constraintLeft_toLeftOf="@id/tv_heading_selected_emi"
+            motion:layout_constraintTop_toBottomOf="@id/tv_heading_selected_emi" />
+        <Constraint
+            android:id="@+id/cl_container_bank"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="84dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="@id/cl_container_emi" />
+
+        <Constraint
+            android:id="@+id/rv_emi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            android:visibility="invisible"
+            motion:layout_constraintLeft_toLeftOf="@id/cl_container_emi"
+            motion:layout_constraintTop_toBottomOf="@id/tv_helper_emi" />
+        <Constraint
+            android:id="@+id/tv_helper_emi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="32dp"
+            android:visibility="invisible"
+            motion:layout_constraintLeft_toLeftOf="@id/cl_container_emi"
+            motion:layout_constraintRight_toRightOf="@id/cl_container_emi"
+            motion:layout_constraintTop_toBottomOf="@id/tv_heading_emi" />
+        <Constraint
+            android:id="@+id/tv_heading_emi"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:visibility="invisible"
+            motion:layout_constraintTop_toTopOf="@id/cl_container_emi"
+            motion:layout_editor_absoluteX="204dp" />
+        <Constraint
+            android:id="@+id/tv_heading_selected_emi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:alpha="0.6"
+            android:visibility="visible"
+            motion:layout_constraintLeft_toLeftOf="@id/cl_container_emi"
+            motion:layout_constraintTop_toTopOf="@id/cl_container_emi" />
+        <Constraint
+            android:id="@+id/cl_container_emi"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="84dp"
+            android:alpha="0.6"
+            android:translationZ="-1dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="@id/cl_container_credit" />
+        <Constraint
+            android:id="@+id/iv_arrow_down_emi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
+            android:alpha="0.6"
+            android:visibility="visible"
+            motion:layout_constraintRight_toRightOf="@id/cl_container_emi"
+            motion:layout_constraintTop_toTopOf="@id/cl_container_emi" />
+        <Constraint
+            android:id="@+id/tv_cta_third_kyc"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            motion:layout_constraintBottom_toBottomOf="@id/cl_container_bank"
+            android:visibility="visible"
+            motion:layout_constraintRight_toRightOf="@id/cl_container_bank"
+            motion:layout_constraintLeft_toLeftOf="@id/cl_container_bank" />
+    </ConstraintSet>
+    <!--  Third View Constraints Ends  -->
+
+</MotionScene>
